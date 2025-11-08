@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.env/
+*.db
+
+# Node / React
+node_modules/
+build/
+dist/
+*.log
+
+# Model & Large Checkpoints
+*.pth
+*.pt
+*.onnx
+
+# System
+.DS_Store
+*.zip
+*.tar.gz
