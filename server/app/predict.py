@@ -15,7 +15,7 @@ transform = transforms.Compose([
                          [0.229, 0.224, 0.225])
 ])
 
-# ✅ Load model dynamically
+# Load model dynamically
 def load_model(model_path: str, classes_path: str):
     with open(classes_path, "r") as f:
         class_mapping = json.load(f)
@@ -29,7 +29,7 @@ def load_model(model_path: str, classes_path: str):
     print(f"✅ Model loaded with classes: {classes}")
     return model, classes
 
-# ✅ Inference
+# Inference
 def predict(model, image_path: str, classes):
     img = Image.open(image_path).convert("RGB")
     x = transform(img).unsqueeze(0).to(device)

@@ -6,7 +6,7 @@ function UploadMushroom() {
   const [preview, setPreview] = useState(null);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const API_BASE = window.location.origin + "/api";
   // Predict
   const handleUpload = async (e) => {
     e.preventDefault();
@@ -17,7 +17,7 @@ function UploadMushroom() {
 
     setLoading(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/predict", {
+      const res = await fetch(`${API_BASE}/predict`, {
         method: "POST",
         body: formData,
       });
@@ -36,7 +36,7 @@ function UploadMushroom() {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const res = await fetch("http://127.0.0.1:8000/visualize", {
+      const res = await fetch(`${API_BASE}/visualize`, {
         method: "POST",
         body: formData,
       });
